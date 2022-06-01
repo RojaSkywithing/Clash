@@ -244,6 +244,30 @@ proxy-groups:
       - 🇸🇬 SG03 Misaka TG2
       - 🇨🇳 TW00 Hinet BGP-R
       - 🇺🇲 US00 Apernet CT
+  - name: 📺 YouTube
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - 🎯 全球直连
+      - ♻️ 自动选择
+      - 🇨🇱 智利转发
+      - 🇩🇪 德国转发
+      - 🇪🇸 西班牙转发
+      - 🇷🇴 罗马尼亚转发
+      - 🇯🇵 日本转发
+      - 🇨🇳 台湾转发
+      - 🇦🇺 澳洲转发
+      - 🇭🇰 HK00 DMIT BGP
+      - 🇭🇰 HK01 Misaka BGP
+      - 🇭🇰 HK06 Nearoute BGP
+      - 🇭🇰 HK08 DMIT CU-R
+      - 🇯🇵 JP01 Apernet CU-R
+      - 🇯🇵 JP02 Apernet BGP
+      - 🇸🇬 SG00 Misaka BGP
+      - 🇸🇬 SG02 Misaka TG1
+      - 🇸🇬 SG03 Misaka TG2
+      - 🇨🇳 TW00 Hinet BGP-R
+      - 🇺🇲 US00 Apernet CT 
   - name: ⭐️ Star+
     type: select
     proxies:
