@@ -13,6 +13,7 @@ proxies:
   - {name: 🇨🇳 台湾, server: jp.hugesport.xyz, port: 41414, type: trojan, password: ocFDKtXcJy, sni: jp.hugesport.xyz, skip-cert-verify: true}
   - {name: 🇨🇱 智利 甲骨文, server: cl.hugesport.xyz, port: 14939, type: trojan, password: 9oULvzp4mT, sni: cl.hugesport.xyz, skip-cert-verify: true}
   - {name: 🇦🇺 澳大利亚 甲骨文, server: au1.630318.xyz, port: 443, type: trojan, password: dazn2022, sni: au1.630318.xyz, skip-cert-verify: true}
+  - {name: 🇮🇳 印度, server: jp.hugesport.xyz, port: 36598, type: trojan, password: cY6m2tpDvB, sni: jp.hugesport.xyz, skip-cert-verify: true}  
   - {name: 🇭🇰 HK00 DMIT BGP, server: 162.14.132.76, port: 54728, type: ss, cipher: aes-128-gcm, password: 1ad91f1a-8179-41ea-b85d-d3c4e925a008, sni: it0.hugesport.xyz, skip-cert-verify: true}
   - {name: 🇭🇰 HK01 Misaka BGP, server: 162.14.132.76, port: 54828, type: ss, cipher: aes-128-gcm, password: 1ad91f1a-8179-41ea-b85d-d3c4e925a008}
   - {name: 🇭🇰 HK06 Nearoute BGP, server: 162.14.132.76, port: 60189, type: ss, cipher: aes-128-gcm, password: 1ad91f1a-8179-41ea-b85d-d3c4e925a008}
