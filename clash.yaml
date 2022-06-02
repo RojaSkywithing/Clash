@@ -551,7 +551,7 @@ rule-providers:
     type: http
     behavior: classical
     url: "https://raw.githubusercontent.com/RojaSkywithing/Clash/main/NBA.yaml"
-    path: ./ruleset/starplus.yaml
+    path: ./ruleset/nba.yaml
     interval: 864000  
   🛑 全球拦截:
     type: http
