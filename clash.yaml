@@ -45,6 +45,7 @@ proxy-groups:
       - 🇯🇵 日本转发
       - 🇨🇳 台湾转发
       - 🇦🇺 澳洲转发
+      - 🇮🇳 印度转发
       - 🇭🇰 HK00 DMIT BGP
       - 🇭🇰 HK01 Misaka BGP
       - 🇭🇰 HK06 Nearoute BGP
@@ -77,6 +78,7 @@ proxy-groups:
       - 🇯🇵 日本转发
       - 🇨🇳 台湾转发
       - 🇦🇺 澳洲转发
+      - 🇮🇳 印度转发
       - 🇭🇰 HK00 DMIT BGP
       - 🇭🇰 HK01 Misaka BGP
       - 🇭🇰 HK06 Nearoute BGP
@@ -114,6 +116,7 @@ proxy-groups:
       - 🇯🇵 日本转发
       - 🇨🇳 台湾转发
       - 🇦🇺 澳洲转发
+      - 🇮🇳 印度转发
       - 🇭🇰 HK00 DMIT BGP
       - 🇭🇰 HK01 Misaka BGP
       - 🇭🇰 HK06 Nearoute BGP
@@ -138,6 +141,7 @@ proxy-groups:
       - 🇯🇵 日本转发
       - 🇨🇳 台湾转发
       - 🇦🇺 澳洲转发
+      - 🇮🇳 印度转发
       - 🇭🇰 HK00 DMIT BGP
       - 🇭🇰 HK01 Misaka BGP
       - 🇭🇰 HK06 Nearoute BGP
@@ -162,6 +166,7 @@ proxy-groups:
       - 🇯🇵 日本转发
       - 🇨🇳 台湾转发
       - 🇦🇺 澳洲转发
+      - 🇮🇳 印度转发
       - 🇭🇰 HK00 DMIT BGP
       - 🇭🇰 HK01 Misaka BGP
       - 🇭🇰 HK06 Nearoute BGP
@@ -186,6 +191,7 @@ proxy-groups:
       - 🇯🇵 日本转发
       - 🇨🇳 台湾转发
       - 🇦🇺 澳洲转发
+      - 🇮🇳 印度转发
       - 🇭🇰 HK00 DMIT BGP
       - 🇭🇰 HK01 Misaka BGP
       - 🇭🇰 HK06 Nearoute BGP
@@ -210,6 +216,7 @@ proxy-groups:
       - 🇯🇵 日本转发
       - 🇨🇳 台湾转发
       - 🇦🇺 澳洲转发
+      - 🇮🇳 印度转发
       - 🇭🇰 HK00 DMIT BGP
       - 🇭🇰 HK01 Misaka BGP
       - 🇭🇰 HK06 Nearoute BGP
@@ -234,6 +241,7 @@ proxy-groups:
       - 🇯🇵 日本转发
       - 🇨🇳 台湾转发
       - 🇦🇺 澳洲转发
+      - 🇮🇳 印度转发
       - 🇭🇰 HK00 DMIT BGP
       - 🇭🇰 HK01 Misaka BGP
       - 🇭🇰 HK06 Nearoute BGP
@@ -258,6 +266,7 @@ proxy-groups:
       - 🇯🇵 日本转发
       - 🇨🇳 台湾转发
       - 🇦🇺 澳洲转发
+      - 🇮🇳 印度转发
       - 🇭🇰 HK00 DMIT BGP
       - 🇭🇰 HK01 Misaka BGP
       - 🇭🇰 HK06 Nearoute BGP
@@ -282,6 +291,7 @@ proxy-groups:
       - 🇯🇵 日本转发
       - 🇨🇳 台湾转发
       - 🇦🇺 澳洲转发
+      - 🇮🇳 印度转发
       - 🇭🇰 HK00 DMIT BGP
       - 🇭🇰 HK01 Misaka BGP
       - 🇭🇰 HK06 Nearoute BGP
@@ -293,6 +303,31 @@ proxy-groups:
       - 🇸🇬 SG03 Misaka TG2
       - 🇨🇳 TW00 Hinet BGP-R
       - 🇺🇲 US00 Apernet CT
+  - name: 🏀 NBA
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - 🎯 全球直连
+      - ♻️ 自动选择
+      - 🇨🇱 智利转发
+      - 🇩🇪 德国转发
+      - 🇪🇸 西班牙转发
+      - 🇷🇴 罗马尼亚转发
+      - 🇯🇵 日本转发
+      - 🇨🇳 台湾转发
+      - 🇦🇺 澳洲转发
+      - 🇮🇳 印度转发
+      - 🇭🇰 HK00 DMIT BGP
+      - 🇭🇰 HK01 Misaka BGP
+      - 🇭🇰 HK06 Nearoute BGP
+      - 🇭🇰 HK08 DMIT CU-R
+      - 🇯🇵 JP01 Apernet CU-R
+      - 🇯🇵 JP02 Apernet BGP
+      - 🇸🇬 SG00 Misaka BGP
+      - 🇸🇬 SG02 Misaka TG1
+      - 🇸🇬 SG03 Misaka TG2
+      - 🇨🇳 TW00 Hinet BGP-R
+      - 🇺🇲 US00 Apernet CT  
   - name: 🚴 Eurosport
     type: select
     proxies:
@@ -306,6 +341,7 @@ proxy-groups:
       - 🇯🇵 日本转发
       - 🇨🇳 台湾转发
       - 🇦🇺 澳洲转发
+      - 🇮🇳 印度转发
       - 🇭🇰 HK00 DMIT BGP
       - 🇭🇰 HK01 Misaka BGP
       - 🇭🇰 HK06 Nearoute BGP
@@ -330,6 +366,7 @@ proxy-groups:
       - 🇯🇵 日本转发
       - 🇨🇳 台湾转发
       - 🇦🇺 澳洲转发
+      - 🇮🇳 印度转发
       - 🇭🇰 HK00 DMIT BGP
       - 🇭🇰 HK01 Misaka BGP
       - 🇭🇰 HK06 Nearoute BGP
@@ -370,7 +407,7 @@ proxy-groups:
       - 🇯🇵 日本转发
       - 🇨🇳 台湾转发
       - 🇦🇺 澳洲转发
-      - 🇦🇺 澳大利亚 甲骨文
+      - 🇮🇳 印度转发
       - 🇭🇰 HK00 DMIT BGP
       - 🇭🇰 HK01 Misaka BGP
       - 🇭🇰 HK06 Nearoute BGP
@@ -417,6 +454,11 @@ proxy-groups:
     proxies:
       - DH IEPL
       - 🇨🇳 台湾
+  - name: 🇮🇳 印度转发
+    type: relay
+    proxies:
+      - DH IEPL
+      - 🇮🇳 印度 
   - name: 🇭🇰 香港节点
     type: url-test
     url: http://www.gstatic.com/generate_204
@@ -505,6 +547,12 @@ rule-providers:
     url: "https://raw.githubusercontent.com/RojaSkywithing/Clash/main/StarPlus.yaml"
     path: ./ruleset/starplus.yaml
     interval: 864000
+  🏀 NBA
+    type: http
+    behavior: classical
+    url: "https://raw.githubusercontent.com/RojaSkywithing/Clash/main/NBA.yaml"
+    path: ./ruleset/starplus.yaml
+    interval: 864000  
   🛑 全球拦截:
     type: http
     behavior: classical
@@ -529,6 +577,7 @@ rules:
   - RULE-SET,📼 DAZN,📼 DAZN
   - RULE-SET,📺 YouTube,📺 YouTube
   - RULE-SET,⭐️ Star+,⭐️ Star+
+  - RULE-SET,🏀 NBA,🏀 NBA
   - RULE-SET,🛑 全球拦截,🛑 全球拦截
   - RULE-SET,🍃 应用净化,🍃 应用净化
   - GEOIP,CN,🎯 全球直连
