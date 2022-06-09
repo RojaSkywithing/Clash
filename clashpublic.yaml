@@ -1,0 +1,598 @@
+port: 7890
+socks-port: 7891
+allow-lan: true
+mode: Rule
+log-level: info
+external-controller: 127.0.0.1:9090
+proxies:
+  - {name: 🇮🇹 甲骨文 意大利, server: }
+  - {name: 🇩🇪 德国, server: }
+  - {name: 🇪🇸 西班牙, server: }
+  - {name: 🇷🇴 罗马尼亚, server: }
+  - {name: 🇯🇵 日本 甲骨文, server: }
+  - {name: 🇨🇳 台湾, server: }
+  - {name: 🇨🇱 智利 甲骨文, }
+  - {name: 🇦🇺 澳大利亚 甲骨文, }
+  - {name: 🇮🇳 印度, server: }  
+proxy-providers:
+  ✈️ DH IEPL:
+    type: http
+    path: ./Proxies/dh.yaml
+    url: https://
+    interval: 864000
+    health-check:
+      enable: true
+      url: http://www.gstatic.com/generate_204
+      interval: 86400
+      lazy: true
+  🇭🇰 香港IEPL:
+    type: http
+    path: ./Proxies/hk.yaml
+    url: https://
+    interval: 864000
+    health-check:
+      enable: true
+      url: http://www.gstatic.com/generate_204
+      interval: 86400
+      lazy: true
+  🇭🇰 香港IEPL(1X):
+    type: http
+    path: ./Proxies/hk1x.yaml
+    url: https://
+    interval: 864000
+    health-check:
+      enable: true
+      url: http://www.gstatic.com/generate_204
+      interval: 86400
+      lazy: true        
+  🇯🇵 日本IEPL:
+    type: http
+    path: ./Proxies/jp.yaml
+    url: https://
+    interval: 864000
+    health-check:
+      enable: true
+      url: http://www.gstatic.com/generate_204
+      interval: 86400
+      lazy: true
+  🇸🇬 新加坡IEPL:
+    type: http
+    path: ./Proxies/sg.yaml
+    url: https://
+    interval: 864000
+    health-check:
+      enable: true
+      url: http://www.gstatic.com/generate_204
+      interval: 86400
+      lazy: true      
+  🇸🇬 新加坡IEPL(1X):
+    type: http
+    path: ./Proxies/sg1x.yaml
+    url: https://
+    interval: 864000
+    health-check:
+      enable: true
+      url: http://www.gstatic.com/generate_204
+      interval: 86400
+      lazy: true      
+  🇺🇸 美国IEPL:
+    type: http
+    path: ./Proxies/us.yaml
+    url: https://
+    interval: 864000
+    health-check:
+      enable: true
+      url: http://www.gstatic.com/generate_204
+      interval: 86400
+      lazy: true
+proxy-groups:
+  - name: 🚀 节点选择
+    type: select
+    proxies:
+      - ♻️ 自动选择
+      - 🇭🇰 香港节点
+      - 🇺🇲 美国节点
+      - 🇯🇵 日本节点
+      - 🇸🇬 新加坡节点
+      - 🚀 手动切换
+      - DIRECT
+  - name: 🚀 手动切换
+    type: select
+    proxies:
+      - ✈️ DH    
+      - 🇨🇱 智利转发
+      - 🇩🇪 德国转发
+      - 🇪🇸 西班牙转发
+      - 🇷🇴 罗马尼亚转发
+      - 🇯🇵 日本转发
+      - 🇨🇳 台湾转发
+      - 🇦🇺 澳洲转发
+      - 🇮🇳 印度转发
+      - 🇮🇹 甲骨文 意大利
+      - 🇩🇪 德国
+      - 🇪🇸 西班牙
+      - 🇷🇴 罗马尼亚
+      - 🇯🇵 日本 甲骨文
+      - 🇨🇳 台湾
+      - 🇨🇱 智利 甲骨文
+      - 🇦🇺 澳大利亚 甲骨文
+  - name: ♻️ 自动选择
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+    proxies:
+      - ✈️ DH
+      - 🇨🇱 智利转发
+      - 🇩🇪 德国转发
+      - 🇪🇸 西班牙转发
+      - 🇷🇴 罗马尼亚转发
+      - 🇯🇵 日本转发
+      - 🇨🇳 台湾转发
+      - 🇦🇺 澳洲转发
+      - 🇮🇳 印度转发
+  - name: 📲 电报信息
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - 🎯 全球直连
+      - 🇨🇱 智利转发
+      - 🇩🇪 德国转发
+      - 🇪🇸 西班牙转发
+      - 🇷🇴 罗马尼亚转发
+      - 🇯🇵 日本转发
+      - 🇨🇳 台湾转发
+      - 🇦🇺 澳洲转发
+      - 🇮🇳 印度转发
+  - name: 🎬 Netflix
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - 🎯 全球直连
+      - ♻️ 自动选择
+      - 🇨🇱 智利转发
+      - 🇩🇪 德国转发
+      - 🇪🇸 西班牙转发
+      - 🇷🇴 罗马尼亚转发
+      - 🇯🇵 日本转发
+      - 🇨🇳 台湾转发
+      - 🇦🇺 澳洲转发
+      - 🇮🇳 印度转发
+      - 🇭🇰 香港节点
+      - 🇭🇰 香港节点(1X)
+      - 🇺🇲 美国节点
+      - 🇯🇵 日本节点
+      - 🇸🇬 新加坡节点
+      - 🇸🇬 新加坡节点(1X)
+  - name: 🤹🏻‍♂️ DisneyPlus
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - 🎯 全球直连
+      - ♻️ 自动选择
+      - 🇨🇱 智利转发
+      - 🇩🇪 德国转发
+      - 🇪🇸 西班牙转发
+      - 🇷🇴 罗马尼亚转发
+      - 🇯🇵 日本转发
+      - 🇨🇳 台湾转发
+      - 🇦🇺 澳洲转发
+      - 🇮🇳 印度转发
+      - 🇭🇰 香港节点
+      - 🇭🇰 香港节点(1X)
+      - 🇺🇲 美国节点
+      - 🇯🇵 日本节点
+      - 🇸🇬 新加坡节点
+      - 🇸🇬 新加坡节点(1X)
+  - name: 🅿️ PrimeVideo
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - 🎯 全球直连
+      - ♻️ 自动选择
+      - 🇨🇱 智利转发
+      - 🇩🇪 德国转发
+      - 🇪🇸 西班牙转发
+      - 🇷🇴 罗马尼亚转发
+      - 🇯🇵 日本转发
+      - 🇨🇳 台湾转发
+      - 🇦🇺 澳洲转发
+      - 🇮🇳 印度转发
+      - 🇭🇰 香港节点
+      - 🇭🇰 香港节点(1X)
+      - 🇺🇲 美国节点
+      - 🇯🇵 日本节点
+      - 🇸🇬 新加坡节点
+  - name: 📟 Emby
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - 🎯 全球直连
+      - ♻️ 自动选择
+      - 🇨🇱 智利转发
+      - 🇩🇪 德国转发
+      - 🇪🇸 西班牙转发
+      - 🇷🇴 罗马尼亚转发
+      - 🇯🇵 日本转发
+      - 🇨🇳 台湾转发
+      - 🇦🇺 澳洲转发
+      - 🇮🇳 印度转发
+      - 🇭🇰 香港节点
+      - 🇭🇰 香港节点(1X)
+      - 🇺🇲 美国节点
+      - 🇯🇵 日本节点
+      - 🇸🇬 新加坡节点
+      - 🇸🇬 新加坡节点(1X)      
+  - name: 📼 DAZN
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - 🎯 全球直连
+      - ♻️ 自动选择
+      - 🇨🇱 智利转发
+      - 🇩🇪 德国转发
+      - 🇪🇸 西班牙转发
+      - 🇷🇴 罗马尼亚转发
+      - 🇯🇵 日本转发
+      - 🇨🇳 台湾转发
+      - 🇦🇺 澳洲转发
+      - 🇮🇳 印度转发
+      - 🇭🇰 香港节点
+      - 🇭🇰 香港节点(1X)
+      - 🇺🇲 美国节点
+      - 🇯🇵 日本节点
+      - 🇸🇬 新加坡节点
+      - 🇸🇬 新加坡节点(1X)      
+  - name: 📺 YouTube
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - 🎯 全球直连
+      - ♻️ 自动选择
+      - 🇨🇱 智利转发
+      - 🇩🇪 德国转发
+      - 🇪🇸 西班牙转发
+      - 🇷🇴 罗马尼亚转发
+      - 🇯🇵 日本转发
+      - 🇨🇳 台湾转发
+      - 🇦🇺 澳洲转发
+      - 🇮🇳 印度转发
+      - 🇭🇰 香港节点
+      - 🇭🇰 香港节点(1X)
+      - 🇺🇲 美国节点
+      - 🇯🇵 日本节点
+      - 🇸🇬 新加坡节点
+      - 🇸🇬 新加坡节点(1X)      
+  - name: ⭐️ Star+
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - 🎯 全球直连
+      - ♻️ 自动选择
+      - 🇨🇱 智利转发
+      - 🇩🇪 德国转发
+      - 🇪🇸 西班牙转发
+      - 🇷🇴 罗马尼亚转发
+      - 🇯🇵 日本转发
+      - 🇨🇳 台湾转发
+      - 🇦🇺 澳洲转发
+      - 🇮🇳 印度转发
+      - 🇭🇰 香港节点
+      - 🇭🇰 香港节点(1X)
+      - 🇺🇲 美国节点
+      - 🇯🇵 日本节点
+      - 🇸🇬 新加坡节点
+      - 🇸🇬 新加坡节点(1X)      
+  - name: 🏀 NBA
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - 🎯 全球直连
+      - ♻️ 自动选择
+      - 🇨🇱 智利转发
+      - 🇩🇪 德国转发
+      - 🇪🇸 西班牙转发
+      - 🇷🇴 罗马尼亚转发
+      - 🇯🇵 日本转发
+      - 🇨🇳 台湾转发
+      - 🇦🇺 澳洲转发
+      - 🇮🇳 印度转发
+      - 🇭🇰 香港节点
+      - 🇭🇰 香港节点(1X)
+      - 🇺🇲 美国节点
+      - 🇯🇵 日本节点
+      - 🇸🇬 新加坡节点
+      - 🇸🇬 新加坡节点(1X)      
+  - name: 🚴 Eurosport
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - 🎯 全球直连
+      - ♻️ 自动选择
+      - 🇨🇱 智利转发
+      - 🇩🇪 德国转发
+      - 🇪🇸 西班牙转发
+      - 🇷🇴 罗马尼亚转发
+      - 🇯🇵 日本转发
+      - 🇨🇳 台湾转发
+      - 🇦🇺 澳洲转发
+      - 🇮🇳 印度转发
+      - 🇭🇰 香港节点
+      - 🇭🇰 香港节点(1X)
+      - 🇺🇲 美国节点
+      - 🇯🇵 日本节点
+      - 🇸🇬 新加坡节点
+  - name: 🥏 Stan
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - 🎯 全球直连
+      - ♻️ 自动选择
+      - 🇨🇱 智利转发
+      - 🇩🇪 德国转发
+      - 🇪🇸 西班牙转发
+      - 🇷🇴 罗马尼亚转发
+      - 🇯🇵 日本转发
+      - 🇨🇳 台湾转发
+      - 🇦🇺 澳洲转发
+      - 🇮🇳 印度转发
+      - 🇭🇰 香港节点
+      - 🇭🇰 香港节点(1X)
+      - 🇺🇲 美国节点
+      - 🇯🇵 日本节点
+      - 🇸🇬 新加坡节点
+      - 🇸🇬 新加坡节点(1X)
+  - name: ⚽️ Optus
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - 🎯 全球直连
+      - ♻️ 自动选择
+      - 🇨🇱 智利转发
+      - 🇩🇪 德国转发
+      - 🇪🇸 西班牙转发
+      - 🇷🇴 罗马尼亚转发
+      - 🇯🇵 日本转发
+      - 🇨🇳 台湾转发
+      - 🇦🇺 澳洲转发
+      - 🇮🇳 印度转发
+      - 🇭🇰 香港节点
+      - 🇭🇰 香港节点(1X)
+      - 🇺🇲 美国节点
+      - 🇯🇵 日本节点
+      - 🇸🇬 新加坡节点
+      - 🇸🇬 新加坡节点(1X)
+  - name: 🎯 全球直连
+    type: select
+    proxies:
+      - DIRECT
+      - 🚀 节点选择
+      - ♻️ 自动选择
+  - name: 🛑 全球拦截
+    type: select
+    proxies:
+      - REJECT
+      - DIRECT
+  - name: 🍃 应用净化
+    type: select
+    proxies:
+      - REJECT
+      - DIRECT
+  - name: 🐟 漏网之鱼
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - 🎯 全球直连
+      - ♻️ 自动选择
+      - 🇨🇱 智利转发
+      - 🇩🇪 德国转发
+      - 🇪🇸 西班牙转发
+      - 🇷🇴 罗马尼亚转发
+      - 🇯🇵 日本转发
+      - 🇨🇳 台湾转发
+      - 🇦🇺 澳洲转发
+      - 🇮🇳 印度转发
+      - 🇭🇰 香港节点
+      - 🇭🇰 香港节点(1X)
+      - 🇺🇲 美国节点
+      - 🇯🇵 日本节点
+      - 🇸🇬 新加坡节点
+  - name: 🇨🇱 智利转发
+    type: relay
+    proxies:
+      - ✈️ DH
+      - 🇨🇱 智利 甲骨文
+  - name: 🇯🇵 日本转发
+    type: relay
+    proxies:
+      - ✈️ DH
+      - 🇯🇵 日本 甲骨文
+  - name: 🇦🇺 澳洲转发
+    type: relay
+    proxies:
+      - ✈️ DH
+      - 🇦🇺 澳大利亚 甲骨文
+  - name: 🇩🇪 德国转发
+    type: relay
+    proxies:
+      - ✈️ DH
+      - 🇩🇪 德国
+  - name: 🇪🇸 西班牙转发
+    type: relay
+    proxies:
+      - ✈️ DH
+      - 🇪🇸 西班牙
+  - name: 🇷🇴 罗马尼亚转发
+    type: relay
+    proxies:
+      - ✈️ DH
+      - 🇷🇴 罗马尼亚
+  - name: 🇨🇳 台湾转发
+    type: relay
+    proxies:
+      - ✈️ DH
+      - 🇨🇳 台湾
+  - name: 🇮🇳 印度转发
+    type: relay
+    proxies:
+      - ✈️ DH
+      - 🇮🇳 印度 
+  - name: ✈️ DH
+    type: select
+    url: http://www.gstatic.com/generate_204
+    interval: 600
+    tolerance: 50
+    use:
+      - ✈️ DH IEPL      
+  - name: 🇭🇰 香港节点
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 600
+    tolerance: 50
+    use:
+      - 🇭🇰 香港IEPL
+  - name: 🇭🇰 香港节点(1X)
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 600
+    tolerance: 50
+    use:
+      - 🇭🇰 香港IEPL(1X)      
+  - name: 🇯🇵 日本节点
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+    use:
+      - 🇯🇵 日本IEPL
+  - name: 🇸🇬 新加坡节点
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+    use:
+      - 🇸🇬 新加坡IEPL     
+  - name: 🇸🇬 新加坡节点(1X)
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+    use:
+      - 🇸🇬 新加坡IEPL(1X)      
+  - name: 🇺🇲 美国节点
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 150
+    use:
+      - 🇺🇸 美国IEPL
+
+rule-providers:
+  📲 电报信息:
+    type: http
+    behavior: classical
+    url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Telegram/Telegram.yaml"
+    path: ./ruleset/telegram.yaml
+    interval: 864000
+  🎬 Netflix:
+    type: http
+    behavior: classical
+    url: "https://raw.githubusercontent.com/HotKids/Rules/master/Clash/RuleSet/Netflix.yaml"
+    path: ./ruleset/netflix.yaml
+    interval: 864000
+  🥏 Stan:
+    type: http
+    behavior: classical
+    url: "https://raw.githubusercontent.com/HotKids/Rules/master/Clash/RuleSet/Stan.yaml"
+    path: ./ruleset/stan.yaml
+    interval: 864000
+  🚴 Eurosport:
+    type: http
+    behavior: classical
+    url: "https://raw.githubusercontent.com/ShuaiMakMak/Filters/master/CLASH/EUROSPORT.yaml"
+    path: ./ruleset/eurosport.yaml
+    interval: 864000
+  🤹🏻‍♂️ DisneyPlus:
+    type: http
+    behavior: classical
+    url: "https://raw.githubusercontent.com/HotKids/Rules/master/Clash/RuleSet/Discovery%2B.yaml"
+    path: ./ruleset/disneyplus.yaml
+    interval: 864000
+  🅿️ PrimeVideo:
+    type: http
+    behavior: classical
+    url: "https://raw.githubusercontent.com/HotKids/Rules/master/Clash/RuleSet/Prime%20Video.yaml"
+    path: ./ruleset/primevideo.yaml
+    interval: 864000
+  📟 Emby:
+    type: http
+    behavior: classical
+    url: "https://raw.githubusercontent.com/RojaSkywithing/Clash/main/emby.yaml"
+    path: ./ruleset/emby.yaml
+    interval: 864000
+  📼 DAZN:
+    type: http
+    behavior: classical
+    url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/DAZN/DAZN.yaml"
+    path: ./ruleset/dazn.yaml
+    interval: 864000
+  📺 YouTube:
+    type: http
+    behavior: classical
+    url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/YouTube/YouTube.yaml"
+    path: ./ruleset/youtube.yaml
+    interval: 864000
+  ⚽️ Optus:
+    type: http
+    behavior: classical
+    url: "https://raw.githubusercontent.com/RojaSkywithing/Clash/main/optus.yaml"
+    path: ./ruleset/optus.yaml
+    interval: 864000   
+  🛑 全球拦截:
+    type: http
+    behavior: classical
+    url: "https://raw.githubusercontent.com/RojaSkywithing/Clash/main/BanAD.yaml"
+    path: ./ruleset/banad.yaml
+    interval: 864000
+  🍃 应用净化:
+    type: http
+    behavior: classical
+    url: "https://raw.githubusercontent.com/RojaSkywithing/Clash/main/BanProgramAD.yaml"
+    path: ./ruleset/banprogramad.yaml
+    interval: 864000
+
+rules:
+  - DOMAIN-SUFFIX,starplus.com,⭐️ Star+
+  - DOMAIN-SUFFIX,media.starott.com,⭐️ Star+
+  - DOMAIN-SUFFIX,starott.com,⭐️ Star+
+  - DOMAIN,star.api.edge.bamgrid.com,⭐️ Star+
+  - DOMAIN,star.connections.edge.bamgrid.com,⭐️ Star+
+  - DOMAIN,star.content.edge.bamgrid.com,⭐️ Star+
+  - DOMAIN,star.playback.edge.bamgrid.com,⭐️ Star+  
+  - DOMAIN-SUFFIX,lion-nba-msl.akamaized.net,🏀 NBA
+  - DOMAIN-SUFFIX,nba.com,🏀 NBA
+  - DOMAIN-SUFFIX,neulion-a.akamaihd.net,🏀 NBA
+  - DOMAIN-SUFFIX,nlnbamdnyc-a.akamaihd.net,🏀 NBA
+  - DOMAIN-SUFFIX,sdk.iad-03.braze.com,🏀 NBA
+  - DOMAIN-SUFFIX,nbaprop.sc.omtrdc.net,🏀 NBA
+  - DOMAIN-SUFFIX,nlnbaqos.neulion.com,🏀 NBA
+  - DOMAIN-SUFFIX,watchnba.cdnfastly.endeavorstreaming.net,🏀 NBA
+  - DOMAIN-SUFFIX,nbaapi.neulion.com,🏀 NBA
+  - DOMAIN-SUFFIX,nba-api-cdn.opin.media,🏀 NBA
+  - DOMAIN-SUFFIX,neulionqos-a.akamaihd.net,🏀 NBA
+  - DOMAIN-SUFFIX,neulion.com,🏀 NBA
+  - DOMAIN-SUFFIX,nbanlds19vod.akamaized.net,🏀 NBA
+  - RULE-SET,📲 电报信息,📲 电报信息
+  - RULE-SET,🎬 Netflix,🎬 Netflix
+  - RULE-SET,🥏 Stan,🥏 Stan
+  - RULE-SET,🚴 Eurosport,🚴 Eurosport
+  - RULE-SET,🤹🏻‍♂️ DisneyPlus,🤹🏻‍♂️ DisneyPlus
+  - RULE-SET,🅿️ PrimeVideo,🅿️ PrimeVideo
+  - RULE-SET,📟 Emby,📟 Emby
+  - RULE-SET,📼 DAZN,📼 DAZN
+  - RULE-SET,📺 YouTube,📺 YouTube
+  - RULE-SET,⚽️ Optus,⚽️ Optus  
+  - RULE-SET,🛑 全球拦截,🛑 全球拦截
+  - RULE-SET,🍃 应用净化,🍃 应用净化
+  - GEOIP,CN,🎯 全球直连
+  - MATCH,🐟 漏网之鱼
