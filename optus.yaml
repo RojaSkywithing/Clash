@@ -13,4 +13,4 @@ payload:
   - DOMAIN-KEYWORD,csm-e-optus
   - DOMAIN-KEYWORD,csm-e-ceoptaase
   - DOMAIN-KEYWORD,drm-widevine-licensing.axprod.net
-#  - DOMAIN-KEYWORD,optus
+  - DOMAIN-KEYWORD,optus
