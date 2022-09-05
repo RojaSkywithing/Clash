@@ -1,6 +1,5 @@
 # > Setanta Sports
 payload:
-  - USER-AGENT,setantasports*
   - DOMAIN-SUFFIX,setantasports.com
   - DOMAIN-SUFFIX,imggaming.com
   - DOMAIN-SUFFIX,diceplatform.com
