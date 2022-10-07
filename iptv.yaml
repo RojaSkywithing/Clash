@@ -1,0 +1,17 @@
+15 lines (15 sloc)  409 Bytes
+
+# > emby
+payload:
+  - DOMAIN,emby.otakudrive.life
+  - DOMAIN,emby-cf.plusmedia.site 
+  - DOMAIN,emby.xeton.dev
+  - DOMAIN,jellyfin.xeton.dev
+  - DOMAIN,movie.xeton.dev
+  - DOMAIN,servers.xeton.dev
+  - DOMAIN,emby.riches.cloud
+  - DOMAIN-SUFFIX,odysseyplus.site
+  - DOMAIN-SUFFIX,emby.wtf
+  - DOMAIN,sg4.hugesport.xyz
+  - DOMAIN-SUFFIX,jmsooo.com
+  - DOMAIN-SUFFIX,pornemby.club
+  - IP-CIDR,198.204.247.154/32
