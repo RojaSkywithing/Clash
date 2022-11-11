@@ -16,3 +16,4 @@ payload:
 // 此条分流可以串流走别的节点
   - DOMAIN,neuclnbavodns.akamaized.net
   - DOMAIN,nba.cloud.easelive.tv
+  - DOMAIN-SUFFIX,nbalpng.akamaized.net
